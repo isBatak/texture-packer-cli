@@ -1,0 +1,6 @@
+-cp src
+-lib openfl
+-lib lime
+-main Main
+-cpp bin
+-D HXCPP_M64

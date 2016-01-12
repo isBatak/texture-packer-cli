@@ -12,39 +12,41 @@ import openfl.display.PNGEncoderOptions;
  * ...
  * @author Ivica Batinić
  */
-class Main 
+class Main
 {
 	private var _ba:ByteArray;
 	private var _bd:BitmapData;
-	
-	private var _path:String = "E:/Programiranje/Haxe_Projects/simple_cmd/New Project/resources/textures";
-	
-	static function main() 
+
+	private var _path:String = "../resources/textures";
+
+	static function main()
 	{
 		new Main();
 	}
-	
+
 	public inline function new():Void
-    {
+  {
 		Lib.println(Sys.executablePath());
 		Lib.println(Lib.getBinDirectory());
-		
-		Sys.getChar(true);
-		
+
+		//Sys.getChar(true);
+
 		//saveAtlas();
-		
+
+		Lib.println(Sys.args());
+
 		loagImages();
-    }
-	
+  }
+
 	@:noCompletion
-	private function saveAtlas():Void 
+	private function saveAtlas():Void
 	{
 		_bd = new BitmapData(1000, 1000);
-		
+
 		_ba = _bd.encode(new Rectangle(), new PNGEncoderOptions());
-		
+
 		var fo:FileOutput = sys.io.File.write("test.png", true);
-		
+
 		try {
 			fo.writeString(_ba.toString());
 			fo.close();
@@ -52,11 +54,11 @@ class Main
 		catch(e:Dynamic) {
 			Lib.println(e);
 		}
-		
+
 	}
-	
+
 	@:noCompletion
-	private function loagImages():Void 
+	private function loagImages():Void
 	{
 		if (FileSystem.isDirectory(_path)) {
 			var files:Array<String> = FileSystem.readDirectory(_path);
