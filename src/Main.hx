@@ -7,6 +7,8 @@ import openfl.utils.ByteArray;
 import sys.io.FileOutput;
 import sys.FileSystem;
 import openfl.display.PNGEncoderOptions;
+import cmd.processor.CmdProcessor;
+import cmd.helper.LogHelper;
 
 /**
  * ...
@@ -19,24 +21,61 @@ class Main
 
 	private var _path:String = "../resources/textures";
 
+	private var processor:CmdProcessor;
+
 	static function main()
 	{
-		new Main();
+		var interpreter = new Main();
+		interpreter.run();
 	}
 
 	public inline function new():Void
   {
-		Lib.println(Sys.executablePath());
-		Lib.println(Lib.getBinDirectory());
+		processor = new CmdProcessor();
+
+		// Lib.println(Sys.executablePath());
+		// Lib.println(Lib.getBinDirectory());
 
 		//Sys.getChar(true);
 
 		//saveAtlas();
 
-		Lib.println(Sys.args());
-
-		loagImages();
+		// Lib.println(Sys.args());
+		//
+		// loagImages();
   }
+
+	public function run():Void
+	{
+    var command = getCommandFromSysArgs();
+    try
+		{
+      var ret = processor.process(command, Sys.args());
+      if( ret != null )
+        LogHelper.println(ret+"\n");
+    }
+    catch (ex:CmdError)
+    {
+      LogHelper.error("Unknown Command");
+    }
+	}
+
+	public function getCommandFromSysArgs():String
+	{
+    for(arg in Sys.args())
+    {
+      if(arg.charAt(0) == "-")
+      {
+      	/// here you handle command config like -arg
+      }
+      else
+      {
+        return arg;
+      }
+    }
+
+    return "help";
+	}
 
 	@:noCompletion
 	private function saveAtlas():Void
