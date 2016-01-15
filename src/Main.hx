@@ -9,6 +9,7 @@ import sys.FileSystem;
 import openfl.display.PNGEncoderOptions;
 import cmd.processor.CmdProcessor;
 import cmd.helper.LogHelper;
+import cmd.command.PackCommand;
 
 /**
  * ...
@@ -33,6 +34,7 @@ class Main
   {
 		processor = new CmdProcessor();
 
+		processor.addCommand(new PackCommand());
 		// Lib.println(Sys.executablePath());
 		// Lib.println(Lib.getBinDirectory());
 
