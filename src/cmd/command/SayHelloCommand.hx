@@ -4,7 +4,8 @@ import cmd.command.impl.ICommand;
 
 class SayHelloCommand implements ICommand
 {
-	public static var helpString:String = "hello , Just Saying Hello with the current date";
+	public var command(default, never):String = "hello";
+	public var description(default, never):String = "Just Saying Hello with the current date";
 
   public function new(){}
 

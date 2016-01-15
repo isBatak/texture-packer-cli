@@ -15,26 +15,25 @@ enum CmdError
 
 class CmdProcessor
 {
-  /** connecting command to a specific function */
-  public static var commands : List<{ name:String, doc:String, command:ICommand }>;
+  private var commands:List<ICommand>;
   private var currentTime:Float;
 
 	public function new()
 	{
-    commands = new List();
+    commands = new List<ICommand>();
 
-    addCommand('hello', SayHelloCommand.helpString, new SayHelloCommand());
+    addCommand(new SayHelloCommand());
 	}
 
-	function addCommand( name, doc, command ):Void
+	public function addCommand(command:ICommand):Void
   {
-    commands.add({ name : name, doc : doc, command : command });
+    commands.add(command);
   }
 
   /**
   * process a line of user input
   **/
-  public function process(cmd : String, args : Array<String>):String
+  public function process(cmd:String, args : Array<String>):String
   {
     var output:String;
 
@@ -52,10 +51,10 @@ class CmdProcessor
     /** Other commands **/
     for( c in commands )
     {
-      if( c.name == cmd )
+      if( c.command == cmd )
       {
         currentTime = Date.now().getTime();
-        output = c.command.execute(cmd, args);
+        output = c.execute(cmd, args);
         LogHelper.println(' Time passed '+((Date.now().getTime()-currentTime)/1000)+' sec for command "$cmd"');
         return output;
       }
@@ -63,13 +62,13 @@ class CmdProcessor
     return 'Command ' + cmd + ' Not Found, try to type help for more info';
   }
 
-  public static function printHelp() :String
+  private function printHelp() :String
   {
     var ret : String = 'Awesome Shell  \n';
 
     for (c in commands)
     {
-      ret += '\n--------------------------\n\n' + c.doc ;
+      ret += '\n--------------------------\n\n' + c.description ;
     }
     ret += '\n--------------------------\n';
 
