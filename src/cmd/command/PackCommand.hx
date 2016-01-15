@@ -4,6 +4,7 @@ import cmd.command.impl.ICommand;
 import cpp.Lib;
 import sys.io.FileOutput;
 import sys.FileSystem;
+import cmd.helper.LogHelper;
 
 class PackCommand implements ICommand
 {
@@ -17,20 +18,24 @@ class PackCommand implements ICommand
 
 	public function execute(cmd:String, args:Array<String>) : String
 	{
+    LogHelper.println(args.toString());
+
+    loagImages(args[1]);
+
 	  return "Hello! This is a pack command.";
 	}
 
   @:noCompletion
-	private function loagImages():Void
+	private function loagImages(path:String):Void
 	{
-		if (FileSystem.isDirectory(_path)) {
-			var files:Array<String> = FileSystem.readDirectory(_path);
+		if (FileSystem.isDirectory(path)) {
+			var files:Array<String> = FileSystem.readDirectory(path);
 			for (file in files) {
-				Lib.println(file);
+				LogHelper.println(file);
 			}
 		}
 		else {
-			Lib.println("Nije folder");
+			LogHelper.println("Nije folder");
 		}
 	}
 
