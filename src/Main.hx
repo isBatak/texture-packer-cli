@@ -26,12 +26,16 @@ class Main
 
 	static function main()
 	{
+        #if debug
+        	new debugger.HaxeRemote(true, "localhost");
+        #end
+
 		var interpreter = new Main();
 		interpreter.run();
 	}
 
 	public inline function new():Void
-  {
+    {
 		processor = new CmdProcessor();
 
 		processor.addCommand(new PackCommand());
@@ -45,7 +49,7 @@ class Main
 		// Lib.println(Sys.args());
 		//
 		// loagImages();
-  }
+    }
 
 	public function run():Void
 	{

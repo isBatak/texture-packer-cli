@@ -1,6 +1,9 @@
 -cp src
 -lib openfl
 -lib lime
+-lib debugger
 -main Main
 -cpp bin
 -D HXCPP_M64
+-debug
+-D HXCPP_DEBUGGER
