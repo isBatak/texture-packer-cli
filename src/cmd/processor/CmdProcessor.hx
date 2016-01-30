@@ -2,7 +2,7 @@ package cmd.processor;
 
 import cmd.helper.LogHelper;
 import cmd.command.SayHelloCommand;
-import cmd.command.impl.ICommand;
+import cmd.command.ICommand;
 
 using Lambda;
 using StringTools;

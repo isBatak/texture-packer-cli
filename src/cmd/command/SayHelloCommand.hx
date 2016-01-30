@@ -1,6 +1,6 @@
 package cmd.command;
 
-import cmd.command.impl.ICommand;
+import cmd.command.ICommand;
 
 class SayHelloCommand implements ICommand
 {

@@ -1,4 +1,4 @@
-package cmd.command.impl;
+package cmd.command;
 
 interface ICommand
 {
