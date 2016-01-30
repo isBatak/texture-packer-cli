@@ -1,12 +1,12 @@
-package texturepacker.sheet;
+package texturePacker.sheet;
 
-import texturepacker.IAtlasPackage;
-import texturepacker.placement.IPlacement;
-import texturepacker.sheet.ISheet;
-import texturepacker.AtlasPackage;
-import texturepacker.math.PowerOf2;
-import texturepacker.placement.Placement;
-import texturepacker.TexturePacker;
+import texturePacker.IAtlasPackage;
+import texturePacker.placement.IPlacement;
+import texturePacker.sheet.ISheet;
+import texturePacker.AtlasPackage;
+import texturePacker.math.PowerOf2;
+import texturePacker.placement.Placement;
+import texturePacker.TexturePacker;
 import openfl.display.BitmapData;
 import openfl.display.DisplayObject;
 import openfl.display.IBitmapDrawable;

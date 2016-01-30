@@ -1,4 +1,4 @@
-package texturepacker.placement;
+package texturePacker.placement;
 
 import openfl.display.IBitmapDrawable;
 import openfl.geom.Rectangle;

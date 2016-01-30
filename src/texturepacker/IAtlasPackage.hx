@@ -1,4 +1,4 @@
-package texturepacker;
+package texturePacker;
 
 import openfl.display.BitmapData;
 

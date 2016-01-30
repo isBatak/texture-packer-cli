@@ -1,4 +1,4 @@
-package texturepacker.math;
+package texturePacker.math;
 
 class PowerOf2 
 {

@@ -1,4 +1,4 @@
-package com.imagination.texturePacker.impl.sheet;
+package texturePacker.sheet;
 
 import openfl.display.DisplayObject;
 import openfl.display.IBitmapDrawable;

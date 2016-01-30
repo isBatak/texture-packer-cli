@@ -6,4 +6,4 @@
 -cpp bin
 -D HXCPP_M64
 -debug
--D HXCPP_DEBUGGER
+#-D HXCPP_DEBUGGER

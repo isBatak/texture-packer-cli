@@ -18,7 +18,7 @@ class Main
 	static function main()
 	{
         #if debug
-        	new debugger.HaxeRemote(true, "localhost");
+        	//new debugger.HaxeRemote(true, "localhost");
         #end
 
 		var interpreter = new Main();

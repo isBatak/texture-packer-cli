@@ -1,6 +1,6 @@
-package texturepacker.placement; 
+package texturePacker.placement; 
 
-import texturepacker.placement.IPlacement;
+import texturePacker.placement.IPlacement;
 import openfl.display.BitmapData;
 import openfl.display.DisplayObject;
 import openfl.display.IBitmapDrawable;

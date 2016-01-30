@@ -1,9 +1,9 @@
-package texturepacker;
+package texturePacker;
 
-import texturepacker.IAtlasPackage;
-import texturepacker.ITexturePacker;
-import texturepacker.sheet.ISheet;
-import texturepacker.sheet.Sheet;
+import texturePacker.IAtlasPackage;
+import texturePacker.ITexturePacker;
+import texturePacker.sheet.ISheet;
+import texturePacker.sheet.Sheet;
 import openfl.display.IBitmapDrawable;
 import openfl.geom.Point;
 import openfl.Vector;

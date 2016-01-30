@@ -1,6 +1,6 @@
-package texturepacker;
+package texturePacker;
 
-import texturepacker.IAtlasPackage;
+import texturePacker.IAtlasPackage;
 import openfl.display.BitmapData;
 
 class AtlasPackage implements IAtlasPackage 
